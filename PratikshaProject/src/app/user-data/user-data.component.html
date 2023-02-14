@@ -1,0 +1,22 @@
+<div class="user-data">
+    <label for="">search:</label>
+    <input type="text" (input)="searchUser($event)">
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>contact no.</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prati of tempUserInfo">
+                    <td>{{prati.name}}</td>
+                    <td>{{prati.contact}}</td>
+                    <td>{{prati.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

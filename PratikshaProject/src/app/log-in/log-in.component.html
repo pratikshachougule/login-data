@@ -1,0 +1,19 @@
+<div class="login">
+    <form #userLogin="ngForm" (ngSubmit)="onSubmit(userLogin.value);testing()">
+        <div class="centerd-form-items">
+            <div class="form-input">
+                <input type="text" name="emailid" placeholder="Email Id" ngModel #emailid='ngModel' required>
+                <span class="help-block" *ngIf="!emailid.valid && emailid.touched">Please Fill The Email-Id</span>
+                <br />
+            </div>
+            <div class="form-input">
+                <input type="password" name="passwd" placeholder="Password" ngModel #passwd='ngModel' required>
+                <span class="help-block" *ngIf="!passwd.valid && passwd.touched">Please Fill The Password</span>
+                <br />
+            </div>
+            <div class="submit-btn">
+                <input type="submit" [disabled]="!userLogin.valid" value="submit">
+            </div>
+        </div>
+    </form>
+</div>
