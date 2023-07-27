@@ -8,12 +8,12 @@ pipeline {
         }
         stage('build-image'){
             steps{
-                sh 'docker build -t ditiss:v1 .'
+                sh 'docker build -t ditisss:v1 .'
             }
         }
         stage('deploy-image'){
             steps{
-                sh 'docker run --name ditiss -p 9200:80 -d ditiss:v1'
+                sh 'docker run --name ditisss -p 9200:80 -d ditisss:v1'
             }
         }
     }
