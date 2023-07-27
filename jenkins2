@@ -2,8 +2,10 @@ pipeline{
     agent any
     stages{
         stage('docker-stop'){
+            steps{
             sh 'docker stop ditiss2'
             sh 'docker rm ditiss2'
+            }
         }
         stage('deploy-image'){
             steps{
