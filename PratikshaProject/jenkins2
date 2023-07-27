@@ -1,0 +1,14 @@
+pipeline{
+    agent-any
+    stages{
+        stage('docker-stop'){
+            docker stop ditiss2
+            docker rm ditiss2
+        }
+        stage('deploy-image'){
+            steps{
+                sh 'docker run --name ditiss -p 9100:80 -d ditiss2:v1'
+            }
+        }
+    }
+}
